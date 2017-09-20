@@ -9,19 +9,19 @@ public class SegmentTreeLite {
     }
 
     int N;
-    long[] is;
+    long[] vs;
 
     SegmentTreeLite(int n) {
         N = Integer.highestOneBit(n) * 2;
-        is = new long[N * 2];
-        Arrays.fill(is, init);
+        vs = new long[N * 2];
+        Arrays.fill(vs, init);
     }
 
     void update(int id, long val) {
         id += N;
-        is[id] = val;
+        vs[id] = val;
         for (id /= 2; id > 0; id /= 2) {
-            is[id] = merge(is[id * 2], is[id * 2 + 1]);
+            vs[id] = merge(vs[id * 2], vs[id * 2 + 1]);
         }
     }
 
@@ -30,12 +30,12 @@ public class SegmentTreeLite {
         long resR = init;
         while (0 < l && l + (l & -l) <= r) {
             int id = (N + l) / (l & -l);
-            resL = merge(resL, is[id]);
+            resL = merge(resL, vs[id]);
             l += l & -l;
         }
         while (l < r) {
             int id = (N + r) / (r & -r) - 1;
-            resR = merge(is[id], resR);
+            resR = merge(vs[id], resR);
             r -= r & -r;
         }
         return merge(resL, resR);
