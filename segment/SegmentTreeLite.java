@@ -1,6 +1,6 @@
 package segment;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class SegmentTreeLite {
     long init = 0;
@@ -39,5 +39,56 @@ public class SegmentTreeLite {
             r -= r & -r;
         }
         return merge(resL, resR);
+    }
+}
+
+class SegmentTreeLiteTest {
+
+    static class BruteForce {
+        long init = 0;
+        long merge(long l, long r) {
+            return l + r;
+        }
+
+        long[] vs;
+        BruteForce(int n) {
+            vs = new long[n];
+        }
+        void update(int id, long val) {
+            vs[id] = val;
+        }
+        long query(int l, int r) {
+            long res = init;
+            for (int i = l; i < r; i++) {
+                res = merge(res, vs[i]);
+            }
+            return res;
+        }
+    }
+
+    public static void main(String[] args) {
+        Random rnd = new Random(0);
+        int n = 1000;
+        int q = 10000;
+
+        SegmentTreeLite smart = new SegmentTreeLite(n);
+        BruteForce force = new BruteForce(n);
+        while (q-- > 0) {
+            if (rnd.nextBoolean()) {
+                int id = rnd.nextInt(n);
+                long val = rnd.nextInt();
+                smart.update(id, val);
+                force.update(id, val);
+            } else {
+                int l = rnd.nextInt(n);
+                int r = l + rnd.nextInt(n - l) + 1;
+                long resSmart = smart.query(l, r);
+                long resForce = force.query(l, r);
+                if (resSmart != resForce) {
+                    throw new RuntimeException("Test failed");
+                }
+            }
+        }
+        System.out.println("Passed");
     }
 }
