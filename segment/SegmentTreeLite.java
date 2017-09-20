@@ -1,5 +1,3 @@
-package segment;
-
 import java.util.*;
 
 public class SegmentTreeLite {
