@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Dinic {
+class Dinic {
     static int p = 0;
 
     static long dinic(V s, V t) {

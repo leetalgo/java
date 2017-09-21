@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class SegmentTreeLite {
+class SegmentTreeLite {
     long init = 0;
     long merge(long l, long r) {
         return l + r;
