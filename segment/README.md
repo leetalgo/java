@@ -5,8 +5,8 @@
 ------
 [Java](SegmentTreeLite.java)
 
-简单的“单点更新、区间查询”线段树。线段树背后维护了一个数组 `a`，长度为 `n`。
-支持
+简单的“单点更新、区间查询”线段树。线段树背后维护了一个数组 `a`，长度为 `n`。支
+持
 - `O(log n)` 时间内修改 `a[id] = val`：`update(id, val)`；
 - `O(log n)` 时间内查询区间 `[l, r)` 的和 `sum(a[i] for i in [l, r))`：
 `query(l, r)`。
