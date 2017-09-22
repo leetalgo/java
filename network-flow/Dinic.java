@@ -1,11 +1,9 @@
 import java.util.*;
 
 class Dinic {
-    static int p = 0;
-
-    static long dinic(V s, V t) {
+    long dinic(V s, V t) {
         long flow = 0;
-        for (p++; ; p++) {
+        for (int p = 1; ; p++) {
             Queue<V> que = new LinkedList<>();
             s.level = 0;
             s.p = p;
@@ -26,7 +24,7 @@ class Dinic {
         }
     }
 
-    static long dfs(V v, V t, long f) {
+    long dfs(V v, V t, long f) {
         if (v == t) return f;
         for (; v.iter >= 0; v.iter--) {
             E e = v.es.get(v.iter);
@@ -42,7 +40,7 @@ class Dinic {
         return 0;
     }
 
-    static class V {
+    class V {
         ArrayList<E> es = new ArrayList<>();
         int level;
         int p;
@@ -55,7 +53,7 @@ class Dinic {
         }
     }
 
-    static class E {
+    class E {
         V to;
         E rev;
         long cap;
@@ -64,12 +62,5 @@ class Dinic {
             this.to = to;
             this.cap = cap;
         }
-    }
-}
-
-class DinicTest {
-
-    public static void main(String[] args) {
-        // TODO
     }
 }
