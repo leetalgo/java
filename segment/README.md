@@ -3,7 +3,7 @@
 
 精简线段树
 ------
-[Java](SegmentTreeLite.java)
+[Java](SegmentTreeLite.java) [C++](SegmentTreeLite.cpp)
 
 简单的“单点更新、区间查询”线段树。线段树背后维护了一个数组 `a`，长度为 `n`。支持
 - O(log `n`) 时间内修改 `a[id] = val`：`update(id, val)`；

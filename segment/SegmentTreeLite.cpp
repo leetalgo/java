@@ -44,7 +44,6 @@ struct SegmentTreeLite {
 };
 
 int main() {
-
     struct BruteForce {
         vector<ll> vs;
         BruteForce(int n) {
