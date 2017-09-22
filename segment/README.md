@@ -1,8 +1,9 @@
 区间
 ======
 
-精简线段树（SegmentTreeLite）
+精简线段树
 ------
+[Java](SegmentTreeLite.java)
 
 简单的“单点更新、区间查询”线段树。线段树背后维护了一个数组 `a`，长度为 `n`。
 支持

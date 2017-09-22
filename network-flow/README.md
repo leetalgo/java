@@ -1,8 +1,9 @@
 网络流
 ======
 
-Dinic 算法（Dinic）
+Dinic 算法
 ---------
+[Java](Dinic.java)
 
 TODO
 
