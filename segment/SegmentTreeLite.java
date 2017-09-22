@@ -51,6 +51,7 @@ class SegmentTreeLiteTest {
         long[] vs;
         BruteForce(int n) {
             vs = new long[n];
+            Arrays.fill(vs, init);
         }
         void update(int id, long val) {
             vs[id] = val;
