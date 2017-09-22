@@ -63,4 +63,23 @@ class Dinic {
             this.cap = cap;
         }
     }
+
+    public static void main(String[] args) {
+        new Dinic().example();
+    }
+
+    void example() {
+        V s = new V();
+        V t = new V();
+        V a = new V();
+        V b = new V();
+        s.add(a, 1);
+        s.add(b, 2);
+        b.add(a, 1);
+        a.add(t, 2);
+        b.add(t, 1);
+        long flow = dinic(s, t);
+        System.out.println("Flow should be 3");
+        System.out.printf("Flow executed = %d%n", flow);
+    }
 }
