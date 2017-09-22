@@ -1,6 +1,6 @@
 leetalgo
 ========
-[中文](README.zh-ch.md)
+[中文](README.zh-cn.md)
 
 Neat, elegant algorithm implementation.
 
