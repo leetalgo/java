@@ -1,6 +1,9 @@
 leetalgo
 ========
+[中文](README.zh-ch.md)
 
 Neat, elegant algorithm implementation.
 
-精简、优雅的算法实现。
+**Content**
+- [Network flow](network-flow)
+- [Segment](segment)
